@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import 'package:valorantapi/modules/home/home_screen.dart';
 
 void main() {
@@ -12,7 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -27,6 +30,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:HomeScreen()
+    );
+      },
     );
   }
 }

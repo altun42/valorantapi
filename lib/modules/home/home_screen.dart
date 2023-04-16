@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import 'package:valorantapi/modules/home/home_screen_controller.dart';
 import 'package:valorantapi/modules/homeDetail/home_detail_secreen.dart';
-import 'package:valorantapi/routes/app_pages.dart';
-
 class HomeScreen extends GetView<HomeScreenController> {
   const HomeScreen({super.key});
 
@@ -28,7 +27,7 @@ class HomeScreen extends GetView<HomeScreenController> {
 
   Padding characterCard(int index) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.sp),
       child:  cardButton(index) ,
     );
   }
@@ -55,18 +54,18 @@ class HomeScreen extends GetView<HomeScreenController> {
     return Stack(
       children: [
         Container(
-          height: 130,
+          height:19.h,
           decoration: BoxDecoration(
               color: Color(0xff32333d),
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(8.sp)),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.all(7.sp),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                    height: 100,
-                    width: 100,
+                    height: 15.h,
+                    width: 38.w,
                     child: Hero(
                         tag: "${controller.characters[index].name}2",
                         child: Image.network(
@@ -74,13 +73,13 @@ class HomeScreen extends GetView<HomeScreenController> {
                 Text(
                   controller.characters[index].name!,
                   style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 19.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
                 Container(
-                  height: 70,
-                  width: 100,
+                  height: 10.h,
+                  width: 22.w,
                   child: Image.asset(
                     "assets/images/valoLogo.png",
                     fit: BoxFit.fill,
@@ -91,13 +90,13 @@ class HomeScreen extends GetView<HomeScreenController> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.sp),
           child: Container(
-              height: 50,
-              width: 50,
+              height: 7.h,
+              width: 12.w,
               decoration: BoxDecoration(
                   color: Color(0xffff4349),
-                  borderRadius: BorderRadius.circular(30)),
+                  borderRadius: BorderRadius.circular(27.sp)),
               child: Hero(
                 tag: controller.characters[index].name!,
                 child: Image.network(
